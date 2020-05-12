@@ -29,7 +29,7 @@ public class SendFeedbackTest extends BaseTest {
     @ParameterizedTest(name="Submit Feedback: {0}")
     @MethodSource("getContactDetailsFromDataSource")
     @Tag("contact")
-    public void sendFeedbackTest(ContactDetails contactDetails) {
+    public void sendFeedbackTestJunit(ContactDetails contactDetails) {
         //can parse csv file to a class object (ContactDetails) try apache jackson
         //create a csv parser using jackson
         if (contactDetails.getForename().equalsIgnoreCase("hong")) {

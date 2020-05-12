@@ -21,19 +21,19 @@ public class BaseTest {
 
 
     @BeforeAll
-    public static void globalSetup() {
+    public static void globalSetupJunit() {
         Settings.readSettings();
         ExtentManager.initializeReporting();
     }
     @BeforeEach
-    public void setup(TestInfo testInfo) {
+    public void setupJunit(TestInfo testInfo) {
         driver = Browser.launchBrowser();
         ExtentManager.startTest(testInfo.getDisplayName());
         afterTest.setDriver(driver);
     }
 
     @AfterEach
-    public void teardown(TestInfo testInfo) {
+    public void teardownJunit(TestInfo testInfo) {
         String testName = testInfo.getDisplayName();
 //        if(!.isSuccess()) {
 //            System.out.println("*** Test execution " + testName + " failed...");
@@ -58,7 +58,7 @@ public class BaseTest {
     }
 
     @AfterAll
-    public static void globalTeardown()
+    public static void globalTeardownJunit()
     {
         ExtentManager.getExtentReports().flush();
     }

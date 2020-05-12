@@ -26,7 +26,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     @Tag("checkout")
-    public void checkoutTest() {
+    public void checkoutTestJunit() {
         ExtentManager.logStep("Login to Jupitor Toys");
         HomePage homePage = new HomePage(driver);
         LoginPopup loginPopup = homePage.navigateToLoginPage();
